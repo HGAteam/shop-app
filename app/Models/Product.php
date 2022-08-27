@@ -35,7 +35,6 @@ class Product extends Model
         if ($featuredImage) {
             return $featuredImage->url;
         }
-
         // default
         return '/images/default.gif';
     }

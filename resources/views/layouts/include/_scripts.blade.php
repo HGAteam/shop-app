@@ -1,18 +1,28 @@
-<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{asset('js/propper.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('vendors/bootstrap-selector/js/bootstrap-select.min.js')}}"></script>
-    <script src="{{asset('vendors/wow/wow.min.js')}}"></script>
-    <script src="{{asset('vendors/sckroller/jquery.parallax-scroll.js')}}"></script>
-    <script src="{{asset('vendors/owl-carousel/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('vendors/nice-select/jquery.nice-select.min.js')}}"></script>
-    <script src="{{asset('vendors/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
-    <script src="{{asset('vendors/isotope/isotope-min.js')}}"></script>
-    <script src="{{asset('vendors/magnify-pop/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('js/plugins.js')}}"></script>
-    <script src="{{asset('vendors/scroll/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
-    <script src="{{asset('vendors/ui-fliter/jquery-ui.js')}}"></script>
-@yield('scripts')
+  <!--   Core JS Files   -->
+  <script src="{{asset('js/core/jquery.min.js')}}" type="text/javascript"></script>
+
+  <script src="{{asset('js/core/popper.min.js')}}" type="text/javascript"></script>
+
+  <script src="{{asset('js/core/bootstrap.min.js')}}" type="text/javascript"></script>
+
+  <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+
+  <script src="{{asset('js/plugins/bootstrap-switch.js')}}"></script>
+
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+
+  <script src="{{asset('js/plugins/nouislider.min.js')}}" type="text/javascript"></script>
+
+  <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+
+  <script src="{{asset('js/plugins/bootstrap-datepicker.js')}}" type="text/javascript"></script>
+
+  <!--  Google Maps Plugin    -->
+
+  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
+
+  <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+  <script src="{{asset('js/now-ui-kit.js?v=1.3.0')}}" type="text/javascript"></script>
+
+    @yield('scripts')
+

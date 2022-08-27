@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminImageController;
 use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\AdminSaleController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,13 @@ use App\Http\Controllers\FrontController;
 */
 
 Route::get('/', [FrontController::class, 'index'])->name('welcome');
+// Route::get('cart', [CartController::class,'create'])->name('create');
+Route::get('/add-to-cart/product={product_id}', [CartController::class,'store'])->name('store');
+Route::delete('remove-from-cart/product={product_id}', [CartController::class,'destroy'])->name('destroy');
+Route::get('cart/{id}', [CartController::class,'cart'])->name('cart');
+// Route::get('products', [FrontController::class,'products'])->name('products');
+// Route::get('/products/checkout', [CartController::class,'checkout'])->name('checkout');
+// Route::post('/product/buy', [CartController::class,'buyProduct'])->name('buy_product');
 
 Auth::routes(["register" => false]);
 
