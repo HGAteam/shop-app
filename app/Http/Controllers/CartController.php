@@ -38,18 +38,26 @@ class CartController extends Controller
         return redirect()->back()->with(['error' => true, trans('Something went wrong, try again or contact support')]);
     }
 
-    public function cart(Request $request,$id)
+    public function cart(Request $request)
     {
+        $cart = Cart::where('ip',$request->ip())->first();
         try {
-            $cart_products = null;
-            if($id == 0){
-                return view('cart', ['cart_products' => $cart_products]);
+            // if($cart){
+            //     $cart_products = null;
+            //     return view('cart', compact('cart_products'));
+            // }else{
+            //     if ($id > 0) {
+            //         $cart = Cart::find($id);
+            //         $cart_products = CartDetail::where('cart_id', $cart->id)->get();
+            //         return view('cart',compact('cart_products'));
+            //     }
+            // }
+            if($cart){
+                $cart_products = CartDetail::where('cart_id', $cart->id)->get();
+                return view('cart',compact('cart_products'));
             }else{
-                if ($id > 0) {
-                    $cart = Cart::find($id);
-                    $cart_products = CartDetail::where('cart_id', $cart->id)->get();
-                    return view('cart', ['cart_products' => $cart_products]);
-                }
+                $cart_products = null;
+                return view('cart', compact('cart_products'));
             }
           
         } catch (\Throwable $th) {
@@ -59,41 +67,12 @@ class CartController extends Controller
 
     public function destroy(Request $request, $product_id)
     {
-        $cart = Cart::where('ip', $request->ip())->where('status', 'Active')->first();
+        $cart = Cart::where('ip', $request->ip())->where('status', 'Active')->where('deleted_at',null)->first();
         $cart_detail = CartDetail::where('cart_id', $cart->id)->where('product_id', $product_id)->delete();
         $products_in_cart = CartDetail::where('cart_id', $cart->id)->count();
-        if ($products_in_cart < 1 || $products_in_cart == null) {
+        if ($products_in_cart < 1) {
             $cart->delete();
-        }
-    }
-
-    //    public function productsCount(Request $request){
-    //     $cart_details = 0;
-
-    //     if($request->ip()){
-    //         $cart = Cart::where('ip', $request->ip())->where('status','Active')->first();
-    //         if($cart){
-    //             $cart_details = CartDetail::where('cart_id',$cart->id)->count();
-    //             return response()->json(['cart_count' => $cart_details]);
-    //         }
-    //         return response()->json(['cart_count' => $cart_details]);
-    //     }
-    //     if(!$request->ip()){
-    //         return response()->json(['cart_count' => $cart_details]);
-    //     }
-    //    }
-
-    public function productsInCart(Request $request)
-    {
-        $cart_details;
-        if ($request->ip()) {
-            $cart = Cart::where('ip', $request->ip())->where('status', 'Active')->first();
-            if ($cart) {
-                $cart_details = CartDetail::where('cart_id', $cart->id)->get();
-                return response()->json(['cart_details' => $cart_details]);
-            }
-        } else {
-            return response()->json(['cart_details' => 'No items']);
+            $cart->update(['status' => 'Disabled']);
         }
     }
 

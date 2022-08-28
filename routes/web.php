@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\AdminSaleController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\SaleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,15 +24,17 @@ Route::get('/', [FrontController::class, 'index'])->name('welcome');
 // Route::get('cart', [CartController::class,'create'])->name('create');
 Route::get('/add-to-cart/product={product_id}', [CartController::class,'store'])->name('store');
 Route::delete('remove-from-cart/product={product_id}', [CartController::class,'destroy'])->name('destroy');
-Route::get('cart/{id}', [CartController::class,'cart'])->name('cart');
-// Route::get('products', [FrontController::class,'products'])->name('products');
+Route::get('cart', [CartController::class,'cart'])->name('cart');
+Route::get('ecourses', [FrontController::class,'ecourses'])->name('ecourses');
+Route::get('ecourses/{slug}', [FrontController::class,'ecourse_show'])->name('ecourses.show');
+Route::get('/ecourses/buy-now/{product_id}', [SaleController::class,'index'])->name('index.purchase');
+Route::get('contact', [FrontController::class,'contact'])->name('contact');
 // Route::get('/products/checkout', [CartController::class,'checkout'])->name('checkout');
-// Route::post('/product/buy', [CartController::class,'buyProduct'])->name('buy_product');
 
 Auth::routes(["register" => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::prefix('home')->name('home.')->group(function () {
+Route::middleware(['auth'])->prefix('home')->name('home.')->group(function () {
     Route::get('get-categories', [AdminCategoryController::class,'getCategories'])->name('get_categories');
     Route::get('categories', [AdminCategoryController::class,'index'])->name('categories');
     Route::post('categories/store', [AdminCategoryController::class,'store'])->name('categories.store');

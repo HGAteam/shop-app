@@ -17,8 +17,9 @@ class AdminProductController extends Controller
      */
     public function index()
     {
+        $title = trans('Products');
         $categories = Category::orderBy('name', 'ASC')->get();
-        return view('admin.products.index',['categories' => $categories]);
+        return view('admin.products.index',['categories' => $categories,'title' => $title]);
     }
 
     /**
@@ -44,59 +45,26 @@ class AdminProductController extends Controller
         $new_product->name = $request->name;
         $new_product->slug = Str::slug($request->name);
         $new_product->description = $request->description;
+        $new_product->old_price = $request->old_price;
         $new_product->price = $request->price;
         $new_product->category_id = $request->category;
         $new_product->save();
         return response()->json(['success'=>'Form is successfully submitted!']);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $edit_product = Product::find($id);
         $edit_product->name = $request->edit_name;
         $edit_product->slug = Str::slug($request->edit_name);
         $edit_product->description = $request->edit_description;
+        $edit_product->old_price = $request->edit_old_price;
         $edit_product->price = $request->edit_price;
         $edit_product->category_id = $request->edit_category;
         $edit_product->save();
         return response()->json(['success'=>'Form is successfully submitted!']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Product::findOrFail($id)->delete();

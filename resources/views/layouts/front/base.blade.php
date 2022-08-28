@@ -8,7 +8,7 @@
 
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}">
 
-    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('front/images/altcoin.png.png') }}">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
@@ -40,12 +40,12 @@
     </style>
 
 </head>
-<body class="index-page sidebar-collapse">
+<body class="@yield('page-type') sidebar-collapse">
     <!-- Navbar -->
     @include('layouts.front.partials._navbar')
     <!-- End Navbar -->
+    @yield('header')
     <div class="wrapper" id="app">
-
         @if (request()->is('/'))
             <div class="page-header" style="height:350px;">
 

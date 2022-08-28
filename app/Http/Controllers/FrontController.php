@@ -13,7 +13,7 @@ class FrontController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('price','ASC')->get();
+        $products = Product::orderBy('price','ASC')->take(6)->get();
         return view('welcome',['products' => $products]);
     }
 
@@ -259,5 +259,19 @@ class FrontController extends Controller
             'ZM' => array('name' => 'Zambia', 'flag' => 'flags/zambia.svg'),
             'ZW' => array('name' => 'Zimbabwe', 'flag' => 'flags/zimbabwe.svg')
         );
+    }
+
+    public function ecourses(){
+        $products = Product::paginate();
+        return view('ecourses', compact('products'));
+    }
+
+    public function ecourse_show($slug){
+        $product = Product::where('slug', $slug)->first();
+        return view('ecourse', compact('product'));
+    }
+
+    public function contact(){
+        return view('contact');
     }
 }

@@ -7,11 +7,9 @@
           $products_in_cart = \App\Models\CartDetail::where('cart_id', $cart)->count();
           if(!$products_in_cart){
             $counter = 0;
-            $id = 0;
           }
           if($products_in_cart > 0){
             $counter = $products_in_cart;
-            $id = $cart;
           }
         }else{
         }
@@ -20,16 +18,14 @@
         }
         
     @endphp
-<nav class="navbar navbar-expand-lg bg-primary {{request()->is('/')? 'fixed-top navbar-transparent' : ''}}" @if(request()->is('/')) color-on-scroll="30" @else @endif>
+<nav class="navbar navbar-expand-lg bg-primary {{request()->is('/')? 'fixed-top navbar-transparent' : ''}} {{request()->is('login','password/reset')? 'fixed-top navbar-transparent' : ''}}" @if(request()->is('/')) color-on-scroll="30" @else @endif>
 
-    <div class="container">
+    <div class="container py-0">
 
       <div class="navbar-translate">
 
         <a class="navbar-brand" href="{{route('welcome')}}" rel="tooltip" title="Courses online" data-placement="bottom">
-
-        Liftitfy
-
+          <img src="{{asset('images/altcoin.png')}}" width="40%" alt="">Liftitfy
         </a>
 
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,9 +44,9 @@
 
         <ul class="navbar-nav">
 
-          <li class="nav-item">
+          <li class="nav-item {{request()->is('/')? 'active':''}}">
 
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{request()->is('/')? '#': '/'}}">
 
               <p>{{ __('Home')}}</p>
 
@@ -58,19 +54,19 @@
 
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item {{request()->is('ecourses')? 'active':''}}">
 
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{request()->is('ecourses')? '#': '/ecourses'}}">
 
-              <p>{{ __('eCourse')}}</p>
+              <p>{{ __('eCourses')}}</p>
 
             </a>
 
           </li>
           
-          <li class="nav-item">
+          <li class="nav-item {{request()->is('contact')? 'active':''}}">
 
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{request()->is('contact')? '#': '/contact'}}">
 
               <p>{{ __('Contact')}}</p>
 
@@ -81,7 +77,7 @@
           <li class="nav-item">
             <a
                 class="nav-link"
-                href="{{url('/cart/'.$id)}}"
+                href="{{url('/cart')}}"
                 data-placement="bottom"
                 title="Shopping Cart"
             >

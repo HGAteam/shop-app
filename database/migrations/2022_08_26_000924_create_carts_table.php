@@ -20,6 +20,7 @@ class CreateCartsTable extends Migration
             $table->string('ip')->nullable();
             // user_id (FK) customer
             // $table->bigInteger('user_id')->unsigned();
+            $table->softDeletes();
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

@@ -1,3 +1,11 @@
+const fieldsExample2 = dlocalInstance.fields({
+    fonts: [{
+        cssSrc: 'https://rsms.me/inter/inter-ui.css'
+    }],
+    locale: 'en',
+    country: 'BR'
+});
+
 // chek other elements of the form
 
 let name = document.getElementById('name')
@@ -8,15 +16,6 @@ let countryContainer = document.getElementById('countryContainer')
 
 let cpf_cnpj = document.getElementById('cpf_cnpj')
 let cpf_cnpjContainer = document.getElementById('cpf_cnpjContainer')
-
-const fieldsExample2 = dlocalInstance.fields({
-    fonts: [{
-        cssSrc: 'https://rsms.me/inter/inter-ui.css'
-    }],
-    locale: 'en',
-    country: country.value,
-});
-console.log(country)
 
 // onChange
 name.addEventListener("keyup", function () {

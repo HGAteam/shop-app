@@ -1,6 +1,7 @@
 @extends('layouts.front.base')
+@section('page-type', 'index-page')
 @section('content')
-    @if ($cart_products->count() < 1)
+    @if ($cart_products == null || $cart_products->count() < 1)
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-8">
@@ -16,8 +17,8 @@
                             </h3>
                             <h3 class="text-center">{{ __('We look forward to seeing you soon') }}</h3>
                             <h4 class="text-center">
-                                <a href="#" class="nav-link">
-                                    {{ __('eCourse') }}
+                                <a href="{{route('ecourses')}}" class="nav-link">
+                                    {{ __('eCourses') }}
                                 </a>
                             </h4>
                         </div>
@@ -66,7 +67,9 @@
                                                                 <p class="pt-4">{{ $item->product->price }}</p>
                                                             </td>
                                                             <td>
-                                                                <a href="#" class="btn btn-danger mt-4 remove-from-cart" data-id="{{ $item->product_id}}">
+                                                                <a href="#"
+                                                                    class="btn btn-danger mt-4 remove-from-cart"
+                                                                    data-id="{{ $item->product_id }}">
                                                                     <i class="fa fa-minus"></i>
                                                                 </a>
                                                             </td>
@@ -76,17 +79,25 @@
                                             </table>
 
                                         </div>
-                                        <div class="col-md-4 bg-info">
+                                        <div class="col-md-4 bg-primary text-white">
                                             <h2 class="text-center mt-4 pt-5">
-                                                {{ __('Total')}}
+                                                {{ __('Total') }}
                                             </h2>
                                             <h2 class="text-center">
-                                                US$ 0.00
+                                                @php
+                                                    $total = 0.00;
+                                                @endphp
+                                                @foreach ($cart_products as $item)
+                                                    @php
+                                                        $total += $item->product->price; //sumanos los valores, ahora solo fata mostrar dicho valor
+                                                    @endphp
+                                                @endforeach
+                                                US$ {{ $total }}
 
                                             </h2>
                                             <div class="text-center">
                                                 <a href="#" class="btn btn-secondary btn-lg">
-                                                    {{ __('Buy Now')}}
+                                                    {{ __('Buy Now') }}
                                                 </a>
                                             </div>
                                         </div>
@@ -96,15 +107,15 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     @endif
 @endsection
 @section('scripts')
-<script>
-    (function(){
-        $.ajaxSetup({
+    <script>
+        (function() {
+            $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
@@ -112,17 +123,17 @@
             $('.remove-from-cart').on('click', function() {
                 var id = $(this).attr('data-id')
                 $.ajax({
-                  type: "delete",
-                  url: '{{ url("/remove-from-cart/product=") }}' +  id,
-                  data: {
-                    'product_id': this.value,
-                  },
-                  success: function(data) {
-                      window.location.reload();
-                    //   alert('Product removed from cart');
-                }
+                    type: "delete",
+                    url: '{{ url('/remove-from-cart/product=') }}' + id,
+                    data: {
+                        'product_id': this.value,
+                    },
+                    success: function(data) {
+                        let products = "{{$cart_products}}";
+                            window.location.reload();           
+                        }
                 });
-            });            
-    })();
-</script>
+            });
+        })();
+    </script>
 @endsection

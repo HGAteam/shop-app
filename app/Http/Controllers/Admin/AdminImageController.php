@@ -11,9 +11,10 @@ class AdminImageController extends Controller
 {
     public function index($id)
     {
+		$title = trans('Product Images');
     	$product = Product::find($id);
     	$images = $product->images()->orderBy('featured', 'desc')->get();
-    	return view('admin.products.images.index')->with(compact('product', 'images'));
+    	return view('admin.products.images.index')->with(compact('product', 'images','title'));
     }
 
     public function store(Request $request, $id)

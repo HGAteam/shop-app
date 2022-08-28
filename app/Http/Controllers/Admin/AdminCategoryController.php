@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use DataTables;
 use Illuminate\Support\Str;
+use DataTables;
 class AdminCategoryController extends Controller
 {
     /**
@@ -16,7 +16,8 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index');
+        $title = trans('Categories');
+        return view('admin.categories.index', compact('title'));
     }
 
     /**
@@ -29,12 +30,6 @@ class AdminCategoryController extends Controller
         return Datatables::of(Category::query())->make(true);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $new_category = new Category();
@@ -46,35 +41,6 @@ class AdminCategoryController extends Controller
         return response()->json(['success'=>'Form is successfully submitted!']);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $update_category = Category::findOrFail($id);
@@ -85,12 +51,6 @@ class AdminCategoryController extends Controller
         return response()->json(['success'=>'Form is successfully submitted!']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Category::findOrFail($id)->delete();
