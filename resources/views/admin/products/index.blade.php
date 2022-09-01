@@ -126,17 +126,17 @@
 
                                 <th>#</th>
 
-                                <th width="125px">{{ __('Product') }}</th>
+                                <th style="font-size:12px;">{{ __('Product') }}</th>
 
-                                <th width="125px">{{ __('Category') }}</th>
+                                <th style="font-size:12px;">{{ __('Category') }}</th>
 
-                                <th width="200px">{{ __('Old Price') }}</th>
+                                <th style="min-width:60px;max-width:200px;font-size:12px;">{{ __('Old Price') }}</th>
 
-                                <th width="125px">{{ __('Price') }}</th>
+                                <th style="min-width:60px;max-width:200px;font-size:12px;">{{ __('Price') }}</th>
 
-                                <th width="125px">{{ __('Description') }}</th>
+                                <th style="min-width:120px;max-width:200px;font-size:12px;">{{ __('Description') }}</th>
 
-                                <th style="min-width:200px;max-width:200px"></th>
+                                <th style="min-width:200px;max-width:200px;font-size:12px;"></th>
 
                             </tr>
 

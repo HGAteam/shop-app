@@ -1,19 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Product;
-use App\Models\Contact;
-use App\Models\Sale;
 
-class SaleController extends Controller
+class AdminDlocalController extends Controller
 {
-    public function index($product_id)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        $product = Product::find($product_id);
-        $title = 'Pay '.$product->name;
-        return view('purchase', compact('product','title'));
+        $title = trans('Dlocal settings');
+        return view('admin.dlocal', compact('title'));
     }
 
     /**
@@ -34,16 +36,17 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        $contact = new Contact();
-        $contact->email = $request->email;
-        $contact->name = $request->name;
-        $contact->phone = $request->phone;
-        $contact->cellphone = $request->cellphone;
-        $contact->country = $request->country;
-        $contact->subject = $request->subject;
-        $contact->body = $request->body;
-        $contact->type = $request->type;
-        $contact->save();
+        if($request->secret_key || $request->test_secret_key){
+            config(['dlocale.production.secret_key' => $request->secret_key]);
+            config(['dlocale.sandbox.secret_key' => $request->test_secret_key]);
+        }
+        if($request->options == 'false'){
+            config(['dlocale.mode' => false]);
+        }else{
+            config(['dlocale.mode' => true]);
+        }
+        
+        return redirect()->back()->with(['success', 'You have updated the Dlocal configuration']);
     }
 
     /**

@@ -27,6 +27,7 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    'page_cart' => env('PAGE_CART', false),
 
     /*
     |--------------------------------------------------------------------------

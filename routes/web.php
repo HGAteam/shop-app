@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminImageController;
 use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\AdminSaleController;
+use App\Http\Controllers\Admin\AdminDlocalController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\SaleController;
@@ -24,10 +25,12 @@ Route::get('/', [FrontController::class, 'index'])->name('welcome');
 // Route::get('cart', [CartController::class,'create'])->name('create');
 Route::get('/add-to-cart/product={product_id}', [CartController::class,'store'])->name('store');
 Route::delete('remove-from-cart/product={product_id}', [CartController::class,'destroy'])->name('destroy');
-Route::get('cart', [CartController::class,'cart'])->name('cart');
 Route::get('ecourses', [FrontController::class,'ecourses'])->name('ecourses');
 Route::get('ecourses/{slug}', [FrontController::class,'ecourse_show'])->name('ecourses.show');
 Route::get('/ecourses/buy-now/{product_id}', [SaleController::class,'index'])->name('index.purchase');
+Route::get('ecourses/cart', [CartController::class,'cart'])->name('cart')->middleware('cart');
+
+
 Route::get('contact', [FrontController::class,'contact'])->name('contact');
 // Route::get('/products/checkout', [CartController::class,'checkout'])->name('checkout');
 
@@ -53,4 +56,6 @@ Route::middleware(['auth'])->prefix('home')->name('home.')->group(function () {
     
     Route::get('orders', [AdminOrderController::class,'index'])->name('orders');
     Route::get('sales', [AdminSaleController::class,'index'])->name('sales');
+
+    Route::get('settings/dlocal', [AdminDlocalController::class,'index'])->name('dlocal.index');
 });

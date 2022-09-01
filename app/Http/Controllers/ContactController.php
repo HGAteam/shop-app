@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Product;
 use App\Models\Contact;
-use App\Models\Sale;
+use Illuminate\Http\Request;
 
-class SaleController extends Controller
+class ContactController extends Controller
 {
-    public function index($product_id)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        $product = Product::find($product_id);
-        $title = 'Pay '.$product->name;
-        return view('purchase', compact('product','title'));
+        //
     }
 
     /**
@@ -34,25 +35,16 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        $contact = new Contact();
-        $contact->email = $request->email;
-        $contact->name = $request->name;
-        $contact->phone = $request->phone;
-        $contact->cellphone = $request->cellphone;
-        $contact->country = $request->country;
-        $contact->subject = $request->subject;
-        $contact->body = $request->body;
-        $contact->type = $request->type;
-        $contact->save();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Contact $contact)
     {
         //
     }
@@ -60,10 +52,10 @@ class SaleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Contact $contact)
     {
         //
     }
@@ -72,10 +64,10 @@ class SaleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Contact $contact)
     {
         //
     }
@@ -83,10 +75,10 @@ class SaleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Contact $contact)
     {
         //
     }
