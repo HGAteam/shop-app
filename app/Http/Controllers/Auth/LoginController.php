@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request as IlluminateRequest;
 
 class LoginController extends Controller
 {
@@ -37,4 +38,21 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function showLoginForm(IlluminateRequest $request)
+    {
+        if ($request->has('redirect_to')) {
+            session()->put('redirect_to', $request->input('redirect_to'));
+        }
+
+        return view('auth.login');
+    }
+
+    public function redirectTo()
+    {
+        if (session()->has('redirect_to'))
+            return session()->pull('redirect_to');
+
+        return $this->redirectTo;
+    }    
 }

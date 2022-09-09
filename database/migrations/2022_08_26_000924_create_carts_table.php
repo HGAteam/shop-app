@@ -17,11 +17,9 @@ class CreateCartsTable extends Migration
             $table->id();
             $table->date('order_date')->nullable();
             $table->string('status'); // Active, Pending, Approved, Cancelled, Finished
-            $table->string('ip')->nullable();
             // user_id (FK) customer
-            // $table->bigInteger('user_id')->unsigned();
-            $table->softDeletes();
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

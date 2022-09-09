@@ -23,7 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $title = trans('Dashboard');
-        return view('home', compact('title'));
+        if (auth()->user()->admin == true) {
+            $title = trans('Dashboard');
+            return view('home', compact('title'));
+        } else {
+            $title = trans('Cart');
+            return view('home', compact('title'));
+        }
     }
 }

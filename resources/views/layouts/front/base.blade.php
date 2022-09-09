@@ -78,7 +78,6 @@
 
         </div>
 
-        @include('layouts.include._footer')
     </div>
 
     @include('layouts.include._scripts')

@@ -19,7 +19,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_name',
         'email',
+        'phone',
+        'country',
+        'city',
+        'address',
+        'zip',
         'password',
     ];
 
@@ -41,4 +47,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
+
+    // cart_id
+    public function getCartAttribute()
+    {
+        $cart = $this->carts()->where('status', 'Active')->first();
+        if ($cart)
+            return $cart;
+
+        // else
+        $cart = new Cart();
+        $cart->status = 'Active';
+        $cart->user_id = $this->id;
+        $cart->save();
+
+        return $cart;
+    }
 }

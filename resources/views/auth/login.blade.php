@@ -51,6 +51,10 @@
                                     class="btn btn-primary btn-round btn-lg btn-block">{{ __('Login') }}</button>
                                 <div class="text-center">
                                     <h6>
+                                        @if (Route::has('register'))
+                                            <a href="{{ route('register') }}"
+                                                class="link">{{ __('New here?') }}</a>
+                                        @endif
                                         @if (Route::has('password.request'))
                                             <a href="{{ route('password.request') }}"
                                                 class="link">{{ __('Forgot Your Password?') }}</a>
@@ -63,5 +67,6 @@
                 </div>
             </div>
         </div>
+        @include('layouts.include._footer')
     </div>
 @endsection

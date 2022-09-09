@@ -5,79 +5,102 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\CartDetail;
+use App\Models\User;
 use App\Models\Product;
 use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+use Carbon\Carbon;
+use App\Mail\NewOrder;
+use Mail;
+use Illuminate\Support\Facades\Hash;
 
 class CartController extends Controller
 {
-    public function store(Request $request, $product_id)
-    {
-        if ($request->ip()) {
-            $cart = Cart::where('ip', $request->ip())->where('status', 'Active')->first();
-            if ($cart) {
-                $cart_detail = CartDetail::create([
-                    'cart_id' => $cart->id,
-                    'product_id' => $product_id
-                ]);
+	public function index()
+	{
 
-                return redirect()->back()->with(['success' => true, 'success' => trans('You have added a new product to your cart')]);
-            } else {
-                $new_cart = Cart::create([
-                    'order_date' => now(),
-                    'status' => 'Active',
-                    'ip' => $request->ip()
-                ]);
-                $cart_detail = CartDetail::create([
-                    'cart_id' => $new_cart->id,
-                    'product_id' => $product_id
-                ]);
+		$title = trans('Orders');
+		return view('orders', compact('title'));
+	}
 
-                return redirect()->back()->with(['success' => true, 'success' => trans('You have added a new product to your cart')]);
-            }
-        }
-        return redirect()->back()->with(['error' => true, trans('Something went wrong, try again or contact support')]);
-    }
+	public function update(Request $request)
+	{
+		$RequestBody = [
+			"amount" => $request->amount,
+			"currency" => "USD",
+			"country" => $request->country,
+			"payment_method_flow" => "REDIRECT",
+			"payer" => [
+				"name" => $request->name,
+				"email" => $request->email,
+				"document" => $request->document,
+				"address" =>  [
+					"city" => $request->city,
+					"street" => $request->street,
+					"number" => $request->number
+				]
+			],
+			"order_id" => auth()->user()->cart->id,
+			"notification_url" => "http://www.liftitfy.com/home/orders"
+		];
 
-    public function cart(Request $request)
-    {
-        $cart = Cart::where('ip',$request->ip())->first();
-        try {
-            // if($cart){
-            //     $cart_products = null;
-            //     return view('cart', compact('cart_products'));
-            // }else{
-            //     if ($id > 0) {
-            //         $cart = Cart::find($id);
-            //         $cart_products = CartDetail::where('cart_id', $cart->id)->get();
-            //         return view('cart',compact('cart_products'));
-            //     }
-            // }
-            if($cart){
-                $cart_products = CartDetail::where('cart_id', $cart->id)->get();
-                return view('cart',compact('cart_products'));
-            }else{
-                $cart_products = null;
-                return view('cart', compact('cart_products'));
-            }
-          
-        } catch (\Throwable $th) {
-        }
-           
-    }
 
-    public function destroy(Request $request, $product_id)
-    {
-        $cart = Cart::where('ip', $request->ip())->where('status', 'Active')->where('deleted_at',null)->first();
-        $cart_detail = CartDetail::where('cart_id', $cart->id)->where('product_id', $product_id)->delete();
-        $products_in_cart = CartDetail::where('cart_id', $cart->id)->count();
-        if ($products_in_cart < 1) {
-            $cart->delete();
-            $cart->update(['status' => 'Disabled']);
-        }
-    }
+		$xdate = Carbon::now()->format('c');
+		$xlogin = config('dlocal.x_login');
+		$transKey = config('dlocal.x_transkey');
+		$reqBody = json_encode($RequestBody);
 
-    public function checkout(Request $request)
-    {
-        return view('checkout');
-    }
+		if (config('dlocal.mode') == false) {
+			$secretKey = config('dlocal.sandbox.secret_key');
+			$signature = hash_hmac("sha256", "$xlogin$xdate$reqBody", $secretKey);
+
+			$headers = [
+				'Accept' => 'application/json',
+				'Authorization' => 'V2-HMAC-SHA256, Signature: ' . $signature,
+				'Content-Type' => 'application/json',
+				'User-Agent' => 'MerchantTest / 1.0',
+				'X-Date' => $xdate,
+				'X-Login' => $xlogin,
+				'X-Trans-Key' => $transKey,
+				'X-Version' => '2.1',
+			];
+
+			$user = User::where('id', auth()->user()->id)->update([
+				'name' => $request->name,
+				'last_name' => $request->last_name,
+				'phone' => $request->phone,
+				'country' => $request->country,
+				'city' => $request->city,
+				'address' => $request->street . ', ' . $request->number,
+				'zip' => $request->zip_code,
+			]);
+
+			$client = new Client();
+
+			$response = $client->request('POST', 'https://sandbox.dlocal.com/payments', [
+				'body' => $reqBody,
+				'headers' => $headers
+			]);
+			
+			dd($response->getBody());
+			 
+		} else {
+			$secretKey = config('dlocal.production.secret_key');
+			$signature = hash_hmac("sha256", "$xlogin$xdate$reqBody", $secretKey);
+		}
+
+		// $cart = $client->cart;
+		// $cart->status = 'Pending';
+		// $cart->order_date = Carbon::now();
+		// $cart->save(); // UPDATE
+
+
+
+		// $admins = User::where('admin', true)->get();
+		// Mail::to($admins)->send(new NewOrder($client, $cart));
+
+		// $notification = 'Tu pedido se ha registrado correctamente. Te contactaremos pronto vía mail!';
+		// return back()->with(compact('notification'));
+	}
 }

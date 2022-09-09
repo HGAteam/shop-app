@@ -16,15 +16,15 @@ class CreateCartDetailsTable extends Migration
         Schema::create('cart_details', function (Blueprint $table) {
             $table->id();
             // FK header
-            $table->bigInteger('cart_id')->unsigned();
+            $table->unsignedBigInteger('cart_id');
             $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
 
             // FK product
-            $table->bigInteger('product_id')->unsigned();
+            $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
 
-            // $table->integer('quantity')->length(10);
-            // $table->integer('discount')->length(10)->default(0); // % int
+            $table->integer('quantity')->length(10)->default(1);
+            $table->integer('discount')->length(10)->default(0); // % int
             $table->timestamps();
         });
     }

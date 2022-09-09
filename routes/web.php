@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminSaleController;
 use App\Http\Controllers\Admin\AdminDlocalController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CartDetailController;
 use App\Http\Controllers\SaleController;
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +24,14 @@ use App\Http\Controllers\SaleController;
 
 Route::get('/', [FrontController::class, 'index'])->name('welcome');
 // Route::get('cart', [CartController::class,'create'])->name('create');
-Route::get('/add-to-cart/product={product_id}', [CartController::class,'store'])->name('store');
-Route::delete('remove-from-cart/product={product_id}', [CartController::class,'destroy'])->name('destroy');
+// Route::get('/add-to-cart/product={product_id}', [CartController::class,'store'])->name('store');
+// Route::delete('remove-from-cart/product={product_id}', [CartController::class,'destroy'])->name('destroy');
 Route::get('ecourses', [FrontController::class,'ecourses'])->name('ecourses');
 Route::get('ecourses/{slug}', [FrontController::class,'ecourse_show'])->name('ecourses.show');
-Route::get('/ecourses/buy-now/{product_id}', [SaleController::class,'index'])->name('index.purchase');
-Route::get('ecourses/cart', [CartController::class,'cart'])->name('cart')->middleware('cart');
-
+// Route::get('/ecourses/buy-now/{product_id}', [SaleController::class,'index'])->name('index.purchase');
+// Route::get('ecourses/cart', [CartController::class,'cart'])->name('cart')->middleware('cart');
+Route::post('/cart', [CartDetailController::class, 'store']);
+Route::delete('/cart', [CartDetailController::class, 'destroy']);
 
 Route::get('contact', [FrontController::class,'contact'])->name('contact');
 // Route::get('/products/checkout', [CartController::class,'checkout'])->name('checkout');
@@ -37,6 +39,8 @@ Route::get('contact', [FrontController::class,'contact'])->name('contact');
 Auth::routes(["register" => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/home', [CartController::class, 'update']);
+Route::get('/home/orders', [CartController::class, 'index']);
 Route::middleware(['auth'])->prefix('home')->name('home.')->group(function () {
     Route::get('get-categories', [AdminCategoryController::class,'getCategories'])->name('get_categories');
     Route::get('categories', [AdminCategoryController::class,'index'])->name('categories');
@@ -59,3 +63,6 @@ Route::middleware(['auth'])->prefix('home')->name('home.')->group(function () {
 
     Route::get('settings/dlocal', [AdminDlocalController::class,'index'])->name('dlocal.index');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

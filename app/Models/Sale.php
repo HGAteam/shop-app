@@ -10,8 +10,6 @@ class Sale extends Model
     use HasFactory;
 
     protected $fillable = [
-        'sale_number',
-        'status',
-        'contact_id',
+        
     ];
 }

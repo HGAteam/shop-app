@@ -24,8 +24,8 @@
 
                     <div class="form-group row">
                         <label class="col-4 pt-2" style="text-align: right">{{ __('Cardholder name') }}</label>
-                        <input id="card-holder" type="text" class="form-control col-5" placeholder="John Doe"
-                            name="card_holder" value="{{ old('card_holder') }}">
+                        <input type="text" class="form-control col-5" placeholder="John Doe" name="card_holder"
+                            value="{{ old('card_holder') }}">
                         @error('card_holder')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
