@@ -52,7 +52,7 @@
                                 
                                 @else
                                     <a href="{{ url('/login?redirect_to='.url()->current()) }}" class="btn btn-danger">
-                                        {{__('Buy Now')}}
+                                       {{__('Buy Now')}}
                                     </a>
                                 @endif
                             </div>
