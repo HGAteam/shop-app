@@ -116,7 +116,6 @@
                 </div>
 
                 <div class="card-body">
-
                     <table class="table table-striped table-bordered table-responsive" id="products_table"
                         style="width:100%;">
 
@@ -126,17 +125,18 @@
 
                                 <th>#</th>
 
-                                <th style="font-size:12px;">{{ __('Product') }}</th>
+                                <th style="font-size:14px;">{{ __('Product') }}</th>
 
-                                <th style="font-size:12px;">{{ __('Category') }}</th>
+                                <th style="font-size:14px;">{{ __('Category') }}</th>
 
-                                <th style="min-width:60px;max-width:200px;font-size:12px;">{{ __('Old Price') }}</th>
+                                <th style="min-width:160px;max-width:200px;font-size:14px;">{{ __('Old Price') }}</th>
 
-                                <th style="min-width:60px;max-width:200px;font-size:12px;">{{ __('Price') }}</th>
+                                <th style="min-width:160px;max-width:200px;font-size:14px;">{{ __('Price') }}</th>
 
-                                <th style="min-width:120px;max-width:200px;font-size:12px;">{{ __('Description') }}</th>
+                                <th style="min-width:120px;max-width:200px;font-size:14px;">{{ __('Description') }}
+                                </th>
 
-                                <th style="min-width:200px;max-width:200px;font-size:12px;"></th>
+                                <th style="min-width:200px;max-width:200px;font-size:14px;"></th>
 
                             </tr>
 
@@ -356,7 +356,7 @@
                             return `US$ ${data.price}`;
                         }
                     },
-                 
+
                     {
                         targets: 5,
 
@@ -366,9 +366,9 @@
 
                         className: 'text-center',
                         render: function(data) {
-                            if(data.description != ''){
+                            if (data.description != '') {
                                 return `<span class="badge badge-success">With Description</span>`;
-                            }else{
+                            } else {
                                 return `<span class="badge badge-danger">No Description</span>`;
                             }
                         }
@@ -401,7 +401,6 @@
                 ]
 
             });
-
 
 
             datatable.on('draw', function() {
@@ -493,7 +492,6 @@
             });
 
 
-
             // REMOVE PRODUCTS
 
             var handleDeleteRow = () => {
@@ -510,37 +508,41 @@
 
                         const productName = parent.querySelectorAll("td")[1].innerText;
 
-                        const deleteUrl = parent.querySelectorAll("td")[5].querySelectorAll(
+                        const deleteUrl = parent.querySelectorAll("td")[6].querySelectorAll(
                             "a")[2].href;
 
+                        if (confirm('You will remove ' + productName) == true) {
 
+                            $.ajaxSetup({
 
-                        alert('Se eliminará ' + productName);
+                                headers: {
 
-                        $.ajaxSetup({
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
+                                        'content')
 
-                            headers: {
+                                }
 
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
-                                    'content')
+                            });
 
-                            }
+                            $.ajax({
 
-                        });
+                                url: deleteUrl,
 
-                        $.ajax({
+                                type: 'DELETE',
 
-                            url: deleteUrl,
+                                success: function(result) {
 
-                            type: 'DELETE',
+                                    datatable.rows().remove().draw();
 
-                            success: function(result) {
+                                }
 
-                                datatable.rows().remove().draw();
+                            });
 
-                            }
+                        } else {
 
-                        });
+                            alert('The product ' + productName + ' was not removed');
+
+                        }
 
                     });
 
@@ -557,7 +559,6 @@
                 const cancelEditButton = document.querySelector('[data-process="cancel_edit"]');
 
                 var update_form = document.getElementById('edit_form');
-
 
 
                 editButtons.forEach((ed) => {
@@ -616,8 +617,6 @@
 
                 });
 
-
-
                 cancelEditButton.addEventListener("click", function(e) {
 
                     e.preventDefault();
@@ -629,8 +628,6 @@
                 });
 
             }
-
-
 
         });
     </script>

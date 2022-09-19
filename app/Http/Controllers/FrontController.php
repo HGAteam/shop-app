@@ -14,7 +14,8 @@ class FrontController extends Controller
     public function index()
     {
         $products = Product::orderBy('price','ASC')->take(6)->get();
-        return view('welcome',['products' => $products]);
+        $title = trans('Buy courses online from anywhere');
+        return view('welcome',['products' => $products, 'title' => $title]);
     }
 
     public function products(){
@@ -32,6 +33,21 @@ class FrontController extends Controller
     }
 
     public static function getCountriesList() {
+        // return array(
+        //     'AR' => array('name' => 'Argentina', 'flag' => 'flags/argentina.svg'),
+        //     'BO' => array('name' => 'Bolivia', 'flag' => 'flags/bolivia.svg'),
+        //     'BR' => array('name' => 'Brazil', 'flag' => 'flags/brazil.svg'),
+        //     'CL' => array('name' => 'Chile', 'flag' => 'flags/chile.svg'),
+        //     'CO' => array('name' => 'Colombia', 'flag' => 'flags/colombia.svg'),
+        //     'EC' => array('name' => 'Ecuador', 'flag' => 'flags/ecuador.svg'),
+        //     'IN' => array('name' => 'India', 'flag' => 'flags/india.svg'),
+        //     'ID' => array('name' => 'Indonesia', 'flag' => 'flags/indonesia.svg'),
+        //     'MX' => array('name' => 'Mexico', 'flag' => 'flags/mexico.svg'),
+        //     'NG' => array('name' => 'Nigeria', 'flag' => 'flags/nigeria.svg'),
+        //     'PY' => array('name' => 'Paraguay', 'flag' => 'flags/paraguay.svg'),
+        //     'ZA' => array('name' => 'South Africa', 'flag' => 'flags/south-africa.svg'),
+        //     'UY' => array('name' => 'Uruguay', 'flag' => 'flags/uruguay.svg')
+        // );
         return array(
             'AF' => array('name' => 'Afghanistan', 'flag' => 'flags/afghanistan.svg'),
             'AX' => array('name' => 'Aland Islands', 'flag' => 'flags/aland-islands.svg'),
@@ -263,15 +279,28 @@ class FrontController extends Controller
 
     public function ecourses(){
         $products = Product::paginate();
-        return view('ecourses', compact('products'));
+        $title = trans('eCourses');
+        return view('ecourses', compact('products','title'));
     }
 
     public function ecourse_show($slug){
         $product = Product::where('slug', $slug)->first();
+        $title = trans($product->name);
         return view('ecourse', compact('product'));
     }
 
     public function contact(){
-        return view('contact');
+        $title = trans('Contact');
+        return view('contact', compact('title'));
+    }
+
+    public function terms(){
+        $title = trans('Terms & Conditions');
+        return view('terms', compact('title'));
+    }
+
+    public function documentation(){
+        $title = trans('LiftingOhter documentation');
+        return view('admin.documentation', compact('title'));
     }
 }

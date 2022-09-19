@@ -18,7 +18,7 @@
           }
           
       @endphp
-      <nav class="navbar navbar-expand-lg bg-primary {{ request()->is('/') ? 'fixed-top navbar-transparent' : '' }} {{ request()->is('login', 'password/reset') ? 'fixed-top navbar-transparent' : '' }}"
+      <nav class="navbar navbar-expand-lg bg-primary {{ request()->is('/','login', 'password/reset', 'register') ? 'fixed-top navbar-transparent' : '' }}"
           @if (request()->is('/')) color-on-scroll="30" @else @endif>
 
           <div class="container py-0">
@@ -49,7 +49,7 @@
 
                   <ul class="navbar-nav">
 
-                      <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
+                      {{-- <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
 
                           <a class="nav-link" href="{{ request()->is('/') ? '#' : '/' }}">
 
@@ -57,7 +57,7 @@
 
                           </a>
 
-                      </li>
+                      </li> --}}
 
                       <li class="nav-item {{ request()->is('ecourses') ? 'active' : '' }}">
 
@@ -78,25 +78,31 @@
                           </a>
 
                       </li>
-                      @if (config('app.page_cart') == true)
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ url('/cart') }}" data-placement="bottom"
-                                  title="Shopping Cart">
-                                  <i class="now-ui-icons shopping_cart-simple"></i>
-                                  <span class="badge badge-secondary px-1 total-count" style="font-size: 10px">
-                                      {{ $counter }}
-                                  </span>
-                              </a>
+                      @if (auth()->check())
+                          @if (auth()->user()->cart->details->count() > 0)
+                              <li class="nav-item">
+                                  <a class="nav-link" href="{{ url('/home') }}" data-placement="bottom"
+                                      title="Shopping Cart">
+                                      <i class="now-ui-icons shopping_cart-simple"></i>
+                                      <span class="badge badge-secondary px-1 total-count" style="font-size: 10px">
+                                          {{ auth()->user()->cart->details->count() }}
+                                      </span>
+                                  </a>
+                          @endif
                           </li>
                       @endif
+
                       @guest
 
                           @if (Route::has('login'))
-                              {{-- <li class="nav-item">
+                              <li class="nav-item">
 
-                  <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                  <a class="nav-link btn btn-neutral btn-round" href="{{ route('login') }}">
+                                      <i class="now-ui-icons users_single-02"></i>
+                                      <p>{{ __('Login') }}</p>
+                                  </a>
 
-              </li> --}}
+                              </li>
                           @endif
                       @else
                           <li class="nav-item dropdown">
@@ -111,17 +117,30 @@
 
                               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMyAccount">
 
-                                  <a class="dropdown-item" href="{{ route('home') }}">
+                                  <a class="dropdown-item" href="{{ route('home.my_account') }}">
 
                                       {{ __('My Account') }}
 
                                   </a>
 
-                                  <a class="dropdown-item disabled" href="#profile">
+                                  @if (auth()->check() && auth()->user()->admin == 0)
+                                      <a class="dropdown-item" href="{{ url('/home/orders') }}">
 
-                                      {{ __('My Profile') }}
+                                          {{ __('My Orders') }}
 
-                                  </a>
+                                      </a>
+                                  @else
+                                  <a class="dropdown-item" href="{{ url('/home/manage-orders') }}">
+
+                                    {{ __('Manage Orders') }}
+
+                                    </a>
+                                  @endif
+                                  <a class="dropdown-item" href="{{ route('home.documentation') }}">
+
+                                    {{ __('Documentation') }}
+
+                                </a>                                  
 
                                   <a class="dropdown-item" target="_blank" href="{{ route('logout') }}"
                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

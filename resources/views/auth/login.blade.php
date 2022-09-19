@@ -5,12 +5,13 @@
         <div class="page-header-image" style="background-image:url({{ asset('img/login.jpg') }})"></div>
         <div class="content">
             <div class="container">
-                <div class="col-md-4 ml-auto mr-auto">
+                <div class="col-md-6 col-lg-6 ml-auto mr-auto">
                     <div class="card card-login card-plain">
                         <div class="card-header text-center">
                             <div class="logo-container">
-                                <img src="{{ asset('img/now-logo.png') }}" alt="">
+                                {{-- <img src="{{ asset('images/altcoin.png') }}" alt=""> --}}
                             </div>
+                            <h3>{{ __('Login') }}</h3>
                         </div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
@@ -45,6 +46,19 @@
                                         </span>
                                     @enderror
                                 </div>
+                                <style>
+                                    .form-check .form-check-sign::after {
+                                        color: #ffffff;
+                                    }
+                                </style>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" name="remember" id="remember" type="checkbox"
+                                            {{ old('remember') ? 'checked' : '' }} />
+                                        <span class="form-check-sign"></span>
+                                        {{ __('Remember me') }}
+                                    </label>
+                                </div>
                             </div>
                             <div class="card-footer text-center">
                                 <button type="submit"
@@ -52,8 +66,7 @@
                                 <div class="text-center">
                                     <h6>
                                         @if (Route::has('register'))
-                                            <a href="{{ route('register') }}"
-                                                class="link">{{ __('New here?') }}</a>
+                                            <a href="{{ route('register') }}" class="link">{{ __('New here?') }}</a>
                                         @endif
                                         @if (Route::has('password.request'))
                                             <a href="{{ route('password.request') }}"

@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <div class="wrapper ">
+    <div class="wrapper">
         @include('layouts.dashboard.partials._sidebar')
         <div class="main-panel" id="main-panel">
             <!-- Navbar -->
@@ -42,7 +42,7 @@
                     {{-- <p class="category">Handcrafted by our friend <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a></p> --}}
                 </div>
             </div>
-            <div class="content">
+            <div class="content" id="app">
                 @yield('content')
             </div>
         </div>

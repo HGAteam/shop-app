@@ -9,7 +9,7 @@
                     <div class="card card-login card-plain">
                         <div class="card-header text-center">
                             <div class="logo-container">
-                                <img src="{{ asset('img/now-logo.png') }}" alt="">
+                                {{-- <img src="{{ asset('images/altcoin.png') }}" alt=""> --}}
                             </div>
                             <h3>{{ __('Reset Password') }}</h3>
                         </div>

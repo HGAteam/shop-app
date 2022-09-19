@@ -16,7 +16,10 @@ class CreateCartsTable extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->date('order_date')->nullable();
-            $table->string('status'); // Active, Pending, Approved, Cancelled, Finished
+            $table->integer('amount')->nullable();
+            // Active, Pending, Approved, Cancelled, Finished
+            $table->string('status'); 
+            $table->string('signature')->nullable(); 
             // user_id (FK) customer
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

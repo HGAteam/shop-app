@@ -158,6 +158,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'terms' => 'The terms and conditions must be read and validated.'
+    ],
 
 ];

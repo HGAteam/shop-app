@@ -35,6 +35,7 @@
               </p>
             </a>
           </li> --}}
+          {{-- @if (auth()->user()->admin == true)
           <li class="nav-item dropdown {{request()->is('home/settings*')? 'active':''}}">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="now-ui-icons loader_gear"></i>
@@ -46,6 +47,10 @@
               <a class="dropdown-item disabled" href="#">{{ __('My Account')}}</a>
               <a class="dropdown-item {{request()->is('home/settings/dlocal')? 'active':''}}" href="{{route('home.dlocal.index')}}">{{ __('Dlocal')}}</a>
             </div>
+          </li>
+          @endif --}}
+          <li class="nav-item {{request()->is('home/dlocal')? 'active':''}}">
+            <a class="nav-link {{request()->is('home/dlocal')? 'active':''}}" href="{{route('home.dlocal.index')}}">{{ __('Dlocal')}}</a>
           </li>
 
           <li class="nav-item dropdown">

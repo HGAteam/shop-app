@@ -3096,7 +3096,7 @@ textarea.form-control:active {
 
 .form-check.disabled .form-check-label,
 .form-check.disabled .form-check-label {
-  color: #9A9A9A;
+  color: #9a9a9a;
   opacity: .5;
   cursor: not-allowed;
 }

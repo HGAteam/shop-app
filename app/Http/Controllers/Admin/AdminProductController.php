@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Product;
 use DataTables;
 use Illuminate\Support\Str;
+
 class AdminProductController extends Controller
 {
     /**
@@ -30,7 +31,7 @@ class AdminProductController extends Controller
     public function getProducts()
     {
         $products = Product::with('category')->orderBy('price','ASC')->get();
-        return Datatables::of($products)->make(true);
+        return DataTables::of($products)->make(true);
     }
 
     /**

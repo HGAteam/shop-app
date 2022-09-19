@@ -3,9 +3,7 @@
 @section('content')
 
 @section('css')
-
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
-
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 @endsection
 
 <div class="container">
@@ -18,7 +16,7 @@
 
                 <div class="card-header">
 
-                    <h4 class="m-3">{{ __('New Category')}}</h4>
+                    <h4 class="m-3">{{ __('New Category') }}</h4>
 
                 </div>
 
@@ -28,7 +26,7 @@
 
                         <div class="form-group">
 
-                            <label for="">{{ __('Name')}}</label>
+                            <label for="">{{ __('Name') }}</label>
 
                             <input type="text" name="name" class="form-control">
 
@@ -38,7 +36,7 @@
 
                         <div class="form-group">
 
-                            <label for="">{{ __('Description')}}</label>
+                            <label for="">{{ __('Description') }}</label>
 
                             <textarea name="description" class="form-control"></textarea>
 
@@ -48,9 +46,11 @@
 
                         <div class="d-flex justify-content-center">
 
-                            <button type="button" class="btn btn-primary" data-process="submit">{{ __('Create')}}</button>
+                            <button type="button" class="btn btn-primary"
+                                data-process="submit">{{ __('Create') }}</button>
 
-                            <button type="button" class="btn btn-danger" data-process="cancel">{{ __('Cancel')}}</button>
+                            <button type="button" class="btn btn-danger"
+                                data-process="cancel">{{ __('Cancel') }}</button>
 
                         </div>
 
@@ -74,7 +74,8 @@
 
                 <div class="card-body">
 
-                    <table class="table table-striped table-bordered table-responsive" id="categories_table" style="width:100%;">
+                    <table class="table table-striped table-bordered table-responsive" id="categories_table"
+                        style="width:100%;">
 
                         <thead class="p-0">
 
@@ -82,17 +83,17 @@
 
                                 <th>#</th>
 
-                                <th style="min-width:60px;max-width:200px;font-size:12px;">{{ __('Name')}}</th>
+                                <th style="min-width:160px;max-width:200px;font-size:14px;">{{ __('Name') }}</th>
 
-                                <th style="min-width:60px;max-width:200px;font-size:12px;">{{ __('Slug')}}</th>
+                                <th style="min-width:160px;max-width:200px;font-size:14px;">{{ __('Slug') }}</th>
 
-                                <th style="min-width:120px;max-width:200px;font-size:12px;">{{ __('Description')}}</th>
+                                <th style="min-width:120px;max-width:200px;font-size:14px;">{{ __('Description') }}</th>
 
                                 <th width="200px"></th>
 
                             </tr>
 
-                            </thead>
+                        </thead>
 
                     </table>
 
@@ -108,7 +109,8 @@
 
 <!-- Modal -->
 
-<div class="modal fade" id="edit_category" tabindex="-1" role="dialog" aria-labelledby="edit_category" aria-hidden="true">
+<div class="modal fade" id="edit_category" tabindex="-1" role="dialog" aria-labelledby="edit_category"
+    aria-hidden="true">
 
     <div class="modal-dialog" role="document">
 
@@ -116,13 +118,13 @@
 
             <div class="modal-header">
 
-                <h5 class="modal-title">{{ __('Edit Category')}}</h5>
+                <h5 class="modal-title">{{ __('Edit Category') }}</h5>
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
-                        <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
 
-                    </button>
+                </button>
 
             </div>
 
@@ -132,7 +134,7 @@
 
                     <div class="form-group">
 
-                        <label for="">{{ __('Name')}}</label>
+                        <label for="">{{ __('Name') }}</label>
 
                         <input type="text" name="edit_name" class="form-control">
 
@@ -142,7 +144,7 @@
 
                     <div class="form-group">
 
-                        <label for="">{{ __('Description')}}</label>
+                        <label for="">{{ __('Description') }}</label>
 
                         <textarea name="edit_description" class="form-control"></textarea>
 
@@ -152,9 +154,11 @@
 
                     <div class="d-flex justify-content-center">
 
-                        <button type="button" class="btn btn-success" data-process="update">{{ __('Update')}}</button>
+                        <button type="button" class="btn btn-success"
+                            data-process="update">{{ __('Update') }}</button>
 
-                        <button type="button" class="btn btn-danger" data-process="cancel_edit">{{ __('Cancel')}}</button>
+                        <button type="button" class="btn btn-danger"
+                            data-process="cancel_edit">{{ __('Cancel') }}</button>
 
                     </div>
 
@@ -169,317 +173,343 @@
 </div>
 
 @section('scripts')
+    <script src="{{ asset('js/app.js') }}"></script>
 
-<script src="{{asset('js/app.js')}}"></script>
+    <!-- DataTables -->
 
-<!-- DataTables -->
-
-<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 
     <script>
+        $(function() {
 
-$(function() {
+            var table = document.querySelector('#categories_table');
 
-    var table = document.querySelector('#categories_table');
+            var datatable;
 
-    var datatable;
+            var cancelButton = document.querySelector('[data-process="cancel"]');
 
-    var cancelButton = document.querySelector('[data-process="cancel"]');
+            var submitButton = document.querySelector('[data-process="submit"]');
 
-    var submitButton = document.querySelector('[data-process="submit"]');   
+            var form = document.getElementById('add_new');
 
-    var form = document.getElementById('add_new');
-
-    var modal = document.getElementById('edit_category');
-
+            var modal = document.getElementById('edit_category');
 
 
-    datatable = $(table).DataTable({
 
-        processing: true,
+            datatable = $(table).DataTable({
 
-        serverSide: true,
+                processing: true,
 
-        ajax: '{!! route('home.get_categories') !!}',
+                serverSide: true,
 
-        columns: [
+                ajax: '{!! route('home.get_categories') !!}',
 
-            { data: 'id', name: 'id', className: 'text-center'},
+                columns: [
 
-            { data: 'name', name: 'name', className: 'text-center' },
+                    {
+                        data: 'id',
+                        name: 'id',
+                        className: 'text-center'
+                    },
 
-            { data: 'slug', name: 'slug', searchable: false, className: 'text-center' },
+                    {
+                        data: 'name',
+                        name: 'name',
+                        className: 'text-center'
+                    },
 
-            { data: 'description', name: 'description', searchable: false, orderable: false, className: 'text-center' },
+                    {
+                        data: 'slug',
+                        name: 'slug',
+                        searchable: false,
+                        className: 'text-center'
+                    },
 
-            { data: null}
+                    {
+                        data: 'description',
+                        name: 'description',
+                        searchable: false,
+                        orderable: false,
+                        className: 'text-center'
+                    },
 
-        ],
+                    {
+                        data: null
+                    }
 
-        "columnDefs": [
+                ],
 
-            {
+                "columnDefs": [
 
-                targets: 4,
+                    {
 
-                orderable: false, 
+                        targets: 4,
 
-                searchable: false,
+                        orderable: false,
 
-                className: 'text-center',
+                        searchable: false,
 
-                render: function(data){
+                        className: 'text-center',
 
-                    if(data.slug == 'online-courses'){
+                        render: function(data) {
 
-                    return `<div class="alert alert-primary" role="alert">
+                            if (data.slug == 'online-courses') {
+
+                                return `<div class="alert alert-primary" role="alert">
 
                         No Actions
 
                         </div>`;
 
-                        }
+                            } else {
 
-                    else{
-
-                     return `<a href="/home/categories/edit=${data.id}" class="btn btn-sm btn-success text-white" data-process="edit"><i class="fa fa-edit"></i></a>
+                                return `<a href="/home/categories/edit=${data.id}" class="btn btn-sm btn-success text-white" data-process="edit"><i class="fa fa-edit"></i></a>
 
                      <a href="/home/categories/delete=${data.id}" class="btn btn-sm btn-danger text-white" data-process="delete">Delete</a>`;
 
+                            }
+
+                        }
+
                     }
 
-                }
+                ]
 
-            }
-
-        ]
-
-    });
+            });
 
 
 
-    datatable.on('draw', function (){
+            datatable.on('draw', function() {
 
-        handleDeleteRow();
+                handleDeleteRow();
 
-        handleEditRow();
+                handleEditRow();
 
-    });
-
-    
-
-    cancelButton.addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        form.reset();
-
-    });
+            });
 
 
 
-    // ADD CATEGORIES
-
-    submitButton.addEventListener("click", function (e) {
-
-    e.preventDefault();   
-
-        const name = document.querySelector('[name="name"]').value;
-
-        const description = document.querySelector('[name="description"]').value;  
-
-        $.ajax({
-
-        url: "{{route('home.categories.store')}}",
-
-        type: "POST",
-
-        data:{
-
-            name:name,
-
-            description:description,
-
-            _token: "{{ csrf_token() }}",
-
-        },
-
-        success:function(response){
-
-            if (response) {
-
-            alert(response.success); 
-
-            form.reset();
-
-            datatable.draw();
-
-            }
-
-        },
-
-        error: function(response) {
-
-            $('#error-name').text(response.responseJSON.errors.name);
-
-            $('#error-description').text(response.responseJSON.errors.description);
-
-        }
-
-        });
-
-    });
-
-   
-
-    
-
-    // REMOVE CATEGORIES
-
-    var handleDeleteRow = () => {
-
-        const deleteButtons = table.querySelectorAll('[data-process="delete"]');
-
-
-
-        deleteButtons.forEach((d) => {
-
-
-
-            d.addEventListener("click", function (e ){
+            cancelButton.addEventListener("click", function(e) {
 
                 e.preventDefault();
 
+                form.reset();
 
-
-                const parent = e.target.closest("tr");
-
-                const categoryName = parent.querySelectorAll("td")[1].innerText;
-
-                const deleteUrl = parent.querySelectorAll("td")[4].querySelectorAll("a")[1].href;
+            });
 
 
 
-                alert('Se eliminará '+categoryName);
+            // ADD CATEGORIES
 
-                $.ajaxSetup({
+            submitButton.addEventListener("click", function(e) {
 
-                    headers: {
+                e.preventDefault();
 
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                const name = document.querySelector('[name="name"]').value;
 
-                    }
-
-                });
+                const description = document.querySelector('[name="description"]').value;
 
                 $.ajax({
 
-                    url: deleteUrl,
+                    url: "{{ route('home.categories.store') }}",
 
-                    type: 'DELETE',
+                    type: "POST",
 
-                    success: function(result) {
+                    data: {
 
-                        datatable.rows().remove().draw();
+                        name: name,
+
+                        description: description,
+
+                        _token: "{{ csrf_token() }}",
+
+                    },
+
+                    success: function(response) {
+
+                        if (response) {
+
+                            alert(response.success);
+
+                            form.reset();
+
+                            datatable.draw();
+
+                        }
+
+                    },
+
+                    error: function(response) {
+
+                        $('#error-name').text(response.responseJSON.errors.name);
+
+                        $('#error-description').text(response.responseJSON.errors.description);
 
                     }
 
                 });
 
-
-
             });
 
+
+
+
+
+            // REMOVE CATEGORIES
+
+            var handleDeleteRow = () => {
+
+                const deleteButtons = table.querySelectorAll('[data-process="delete"]');
+
+
+
+                deleteButtons.forEach((d) => {
+
+
+
+                    d.addEventListener("click", function(e) {
+
+                        e.preventDefault();
+
+
+
+                        const parent = e.target.closest("tr");
+
+                        const categoryName = parent.querySelectorAll("td")[1].innerText;
+
+                        const deleteUrl = parent.querySelectorAll("td")[4].querySelectorAll(
+                            "a")[1].href;
+
+
+
+                        confirm('Se eliminará ' + categoryName);
+
+                        if (confirm == true) {
+
+                            $.ajaxSetup({
+
+                                headers: {
+
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
+                                        'content')
+
+                                }
+
+                            });
+
+                            $.ajax({
+
+                                url: deleteUrl,
+
+                                type: 'DELETE',
+
+                                success: function(result) {
+
+                                    datatable.rows().remove().draw();
+
+                                }
+
+                            });
+
+                        } else {
+
+                            alert('The category '+ categoryName +' was not removed');
+                          
+                        }
+
+                    });
+
+                });
+
+            }
+
+
+
+            //EDIT ROWS
+
+            var handleEditRow = () => {
+
+                const editButtons = table.querySelectorAll('[data-process="edit"]');
+
+                const updateButton = document.querySelector('[data-process="update"]');
+
+                const cancelEditButton = document.querySelector('[data-process="cancel_edit"]');
+
+                var update_form = document.getElementById('update_category');
+
+
+
+                editButtons.forEach((ed) => {
+
+                    ed.addEventListener("click", function(e) {
+
+                        e.preventDefault();
+
+
+
+                        $(modal).modal("show");
+
+
+
+                        const parent = e.target.closest("tr");
+
+                        update_form.querySelector('[name="edit_name"]').value = parent
+                            .querySelectorAll('td')[1].innerText;
+
+                        update_form.querySelector('[name="edit_description"]').value = parent
+                            .querySelectorAll('td')[4].innerText;
+
+                        update_form.action = parent.querySelectorAll("td")[4].querySelectorAll(
+                            "a")[0].href;
+
+                    });
+
+                });
+
+
+
+                updateButton.addEventListener("click", function(e) {
+
+                    e.preventDefault();
+
+                    let url = update_form.action;
+
+                    axios.post(url, new FormData(update_form))
+
+                        .then(function(response) {
+
+                            update_form.reset();
+
+                            datatable.draw();
+
+                            $(modal).modal('hide');
+
+                        })
+
+                        .catch(function(error) {
+
+                        });
+
+                });
+
+
+
+                cancelEditButton.addEventListener("click", function(e) {
+
+                    e.preventDefault();
+
+                    update_form.reset();
+
+                    $(modal).modal('hide');
+
+                });
+
+            }
+
+
+
         });
-
-    }
-
-
-
-    //EDIT ROWS
-
-    var handleEditRow = () => {
-
-        const editButtons = table.querySelectorAll('[data-process="edit"]');
-
-        const updateButton = document.querySelector('[data-process="update"]');
-
-        const cancelEditButton = document.querySelector('[data-process="cancel_edit"]');     
-
-        var update_form = document.getElementById('update_category');
-
-
-
-        editButtons.forEach((ed) => {
-
-            ed.addEventListener("click", function (e){
-
-                e.preventDefault();
-
-              
-
-                $(modal).modal("show");
-
-              
-
-                const parent = e.target.closest("tr");
-
-                update_form.querySelector('[name="edit_name"]').value = parent.querySelectorAll('td')[1].innerText; 
-
-                update_form.querySelector('[name="edit_description"]').value = parent.querySelectorAll('td')[4].innerText;
-
-                update_form.action = parent.querySelectorAll("td")[4].querySelectorAll("a")[0].href;
-
-            });            
-
-        });
-
-
-
-        updateButton.addEventListener("click", function (e) {
-
-            e.preventDefault();   
-
-            let url = update_form.action;
-
-            axios.post(url,new FormData(update_form))
-
-            .then(function (response) {
-
-                update_form.reset();
-
-                datatable.draw();
-
-                $(modal).modal('hide');
-
-            })
-
-            .catch(function (error){
-
-            });
-
-        }); 
-
-
-
-        cancelEditButton.addEventListener("click", function (e) {
-
-            e.preventDefault();
-
-            update_form.reset();
-
-            $(modal).modal('hide');
-
-        });
-
-    }
-
-
-
-    });
-
     </script>
-
 @endsection
 
 @endsection

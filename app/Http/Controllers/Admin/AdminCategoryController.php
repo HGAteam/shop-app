@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use DataTables;
+
 class AdminCategoryController extends Controller
 {
     /**
@@ -27,7 +28,7 @@ class AdminCategoryController extends Controller
      */
     public function getCategories()
     {
-        return Datatables::of(Category::query())->make(true);
+        return DataTables::of(Category::query())->make(true);
     }
 
     public function store(Request $request)

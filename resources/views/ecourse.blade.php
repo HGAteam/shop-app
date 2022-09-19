@@ -22,10 +22,8 @@
                                 @php
                                     try {
                                         $cart_detail = false;
-                                        $cart = \App\Models\Cart::where('user_id', auth()->user()->id)->first();
-                                        $cart_detail = \App\Models\CartDetail::where('cart_id', $cart->id)
-                                            ->where('product_id', $product->id)
-                                            ->first();
+                                        $cart = \App\Models\Cart::where('user_id', auth()->user()->id)->where('status','Active')->first();
+                                        $cart_detail = \App\Models\CartDetail::where('cart_id', $cart->id)->where('product_id', $product->id)->first();
                                     } catch (\Throwable $th) {
                                         //throw $th;
                                     }

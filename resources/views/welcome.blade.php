@@ -8,7 +8,7 @@
     <!-- FEATURED PRODUCTS -->
     <div class="section pt-5 pb-0">
         <div class="container">
-            <h3 class="">FEATURED PRODUCTS</h3>
+            <h3 class="">{{ __('FEATURED PRODUCTS') }}</h3>
             <div class="row">
                 @foreach ($products as $product)
                     <div class="col-md-4">
@@ -29,7 +29,7 @@
                                 @php
                                 try {
                                     $cart_detail = false;
-                                    $cart = \App\Models\Cart::where('user_id',auth()->user()->id)->first();
+                                    $cart = \App\Models\Cart::where('user_id',auth()->user()->id)->where('status','Active')->first();
                                     $cart_detail = \App\Models\CartDetail::where('cart_id',$cart->id)->where('product_id',$product->id)->first();
                                 } catch (\Throwable $th) {
                                     //throw $th;
@@ -65,21 +65,21 @@
     <div class="section pb-0">
         <div class="container">
             <h3 class="text-center text-secondary">
-                Grab all the knowledge you need to be successful
+                {{ __('Grab all the knowledge you need to be successful') }}
             </h3>
 
             <div class="row">
                 <div class="col-md-6">
-                    <h4 class="text-center"><b>CryptoCurrency Investment</b></h4>
-                    <p>Our market will reach as far as Latin America where we have a huge advantage for customer support in
+                    <h4 class="text-center"><b>{{ __('CryptoCurrency Investment') }}</b></h4>
+                    <p>{{ __('Our market will reach as far as Latin America where we have a huge advantage for customer support in
                         Spanish speaking language. This is one of the greater opportunities keeping in mind the growing
-                        hispanic population in US and the rest of the world.</p>
+                        hispanic population in US and the rest of the world')}}.</p>
                 </div>
                 <div class="col-md-6">
-                    <h4 class="text-center"><b>CryptoCurrency Investment</b></h4>
-                    <p>You are not alone in this journey, we are with you to guide you and support in this quest. If you
+                    <h4 class="text-center"><b>{{ __('CryptoCurrency Investment')}}</b></h4>
+                    <p>{{ __('You are not alone in this journey, we are with you to guide you and support in this quest. If you
                         have any question, please feel free to contact us with your concern and we will be more than happy
-                        to assist you.</p>
+                        to assist you') }}.</p>
                 </div>
             </div>
         </div>

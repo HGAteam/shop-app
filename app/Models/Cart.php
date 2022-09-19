@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
         'order_date',
         'status',
         'user_id',
+        'amount',
+        'signature',
     ];
 
     public function details()
@@ -27,4 +30,14 @@ class Cart extends Model
     	}
     	return $total;
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    // cart_id
+    // public function getOrderAttribute()
+    // {
+    //     $order = $this->orders()->where('order_date', $this->order_date)->first();
+    //     return $order;
+    // }
 }

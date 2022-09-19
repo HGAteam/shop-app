@@ -44,8 +44,9 @@ class LoginController extends Controller
         if ($request->has('redirect_to')) {
             session()->put('redirect_to', $request->input('redirect_to'));
         }
+        $title = trans('Login');
 
-        return view('auth.login');
+        return view('auth.login', compact('title'));
     }
 
     public function redirectTo()

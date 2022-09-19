@@ -69,7 +69,7 @@
                           <div class="alert-icon">
                             <i class="now-ui-icons travel_info"></i>
                           </div>
-                          <strong>Info! </strong>  {{__('To change the default values expressed in the fields it is necessary to edit the configuration of your .env file or from the path "/config/dlocal".')}}
+                          <strong>Info! </strong>  {{__('To change the default values expressed in the fields it is necessary to edit configuration of your .env file or from the path "/config/dlocal".')}}
                         </div>
                       </div>
                 </div>
