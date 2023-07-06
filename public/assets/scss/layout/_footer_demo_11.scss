@@ -1,0 +1,380 @@
+/*-------------------------------------------------
+    Site Footer Section
+---------------------------------------------------*/
+/*-------------------------------------------------
+    Site Footer Section
+---------------------------------------------------*/
+.social-links {
+	margin-bottom: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border-bottom: 1px solid #ddd;
+
+	.social-btn {
+		margin: 0px 15px 15px 15px;
+		line-height: 1;
+		font-size: 16px;
+	}
+}
+
+.ec-footer {
+	.footer-top {
+		.footer-logo {
+			text-align: left;
+			margin-bottom: 30px;
+		
+			img {
+				width: 130px;
+			}
+		}
+		.ec-footer-widget {
+			justify-content: center;
+			display: flex;
+			flex-direction: column;
+			margin-top: 10px;
+
+			.ec-footer-main-heading {
+				font-size: 45px;
+				font-weight: 500;
+				line-height: 67px;
+
+				.green-text {
+					color: $demo-11-primary-color;
+				}
+			}
+			p{
+				font-size: 14px;
+				line-height: 28px;
+				color: $text-color-777;
+			}
+
+			.ec-footer-heading {
+				font-size: 16px;
+				font-weight: $font-weight-600;
+				margin-bottom: 18px;
+				line-height: 27px;
+				color: #333;
+				position: $relative;
+				display: block;
+				width: 100%;
+				padding-bottom: 7px;
+
+				.green-text {
+					color: $demo-11-primary-color;
+				}
+			}
+
+			.ec-footer-links {
+				.ec-footer-link {
+					display: block;
+					margin: 0;
+					line-height: 1.5;
+					border: 0;
+					padding: 3px 0;
+					font-weight: $font-weight-400;
+					font-size: 16px;
+					color: $text-color-777;
+					display: flex;
+					align-items: center;
+
+					&:not(:last-child) {
+						margin-bottom: 16px;
+					}
+
+					a {
+						@include ease3;
+						font-size: 14px;
+						line-height: 20px;
+						padding: 0;
+						margin-bottom: 0;
+						display: inline-block;
+						position: $relative;
+						word-break: break-all;
+						letter-spacing: 0;
+						font-weight: 400;
+						color: $text-color-777;
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-bottom {
+	border-bottom: 1px solid #ddd;
+}
+.footer-copy {
+	padding: 10px 0;
+	.footer-bottom-copy {
+		font-size: 13px;
+		color: $text-color-999;
+	}
+}
+.footer-bottom-payment {
+	margin-bottom: 15px;
+}
+
+.ec-heading-res {
+	display: none;
+}
+
+.green-text {
+	a {
+		color: $demo-11-primary-color;
+
+	}
+}
+/*-----------------------------------------------------------------------------------
+    Responsive CSS
+-----------------------------------------------------------------------------------*/
+@media only screen and (max-width: 1869px) {
+	.ec-footer {
+		.footer-top {
+			.ec-footer-social {
+				.ec-footer-widget {
+					.ec-footer-links {
+						.ec-footer-link {
+							a {
+								font-size: 14px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 1499px) {
+	.ec-footer {
+		.footer-top {
+			.col-sm-12.ec-footer-cont-social {
+				width: 24%;
+			}
+
+			.ec-footer-widget {
+				.ec-footer-main-heading {
+					font-size: 36px;
+				}
+
+				.ec-footer-links {
+					.ec-footer-link {
+						font-size: 17px;
+
+						&:not(:last-child) {
+							margin-bottom: 11px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.footer-bottom {
+		.ec-copy {
+			letter-spacing: 1.2px;
+		}
+	}
+}
+@media only screen and (max-width: 1199px) {
+	.footer-news-title {
+		font-size: 28px;
+		margin-bottom: 10px;
+	}
+
+	.footer-bottom {
+		.ec-copy {
+			font-size: 14px;
+		}
+	}
+
+	.footer-bottom-payment {
+		margin-bottom: 15px;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.ec-footer-links.ec-footer-dropdown {
+		display: block !important;
+	}
+}
+@media only screen and (max-width: 991px){
+	.footer-news-desc {
+		font-size: 14px;
+		line-height: 20px;
+		margin-bottom: 10px;
+	}
+
+	.social-links {
+		.social-btn {
+			line-height: 1.5;
+		}
+	}
+
+	.ec-footer {
+
+		.footer-top {
+			.container {
+				>.row {
+					padding: 0;
+				}
+			}
+
+			.ec-footer-cat {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+
+			.col-sm-12 {
+				margin-bottom: 0;
+				width: 100%;
+			}
+
+			.ec-footer-widget {
+
+				.ec-footer-main-heading {
+					font-size: 33px;
+				}
+
+				.ec-footer-links {
+					.ec-footer-link {
+						&:not(:last-child) {
+							margin-bottom: 15px;
+						}
+
+						.ec-footer-dropdown {
+							display: block;
+							padding: 0 0 15px 0;
+						}
+					}
+				}
+
+				.ec-footer-heading {
+					margin-bottom: 5px;
+				}
+			}
+
+			.col-sm-12.col-lg-3 {
+				width: 100%;
+				margin-bottom: 5px;
+			}
+
+			.col-sm-12.col-lg-3.ec-footer-contact {
+				width: 100%;
+				margin-bottom: 5px;
+			}
+
+			.ec-footer-contact {
+				.ec-footer-widget {
+					.ec-footer-heading {
+						margin-bottom: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	.ec-footer-contact {
+		margin-bottom: 0;
+	}
+
+	.footer-news-title {
+		font-size: 20px;
+	}
+	.ec-footer-links.ec-footer-dropdown {
+		display: none;
+		padding: 0 0 15px 0;
+	}
+
+	.footer-bottom-copy {
+		text-align: center;
+	}
+	.ec-heading-res {
+		display: block;
+	}
+
+	.footer-bottom {
+		.col {
+			flex: 1 0 100%;
+		}
+	}
+
+	.col.footer-bottom-right {
+		margin: 15px auto;
+	}
+
+	.footer-bottom-payment.d-flex.justify-content-end {
+		justify-content: center !important;
+	}
+
+	.ec-footer {
+		.footer-top {
+			.ec-footer-social {
+				ul {
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 767px) {
+	.footer-news-desc {
+		max-width: 100%;
+	}
+
+	.ec-footer {
+		.footer-top {
+			.ec-footer-widget {
+				.ec-footer-links {
+					.ec-footer-link {
+						&:not(:last-child) {
+							margin-bottom: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.ec-footer-cat {
+		margin-bottom: 30px;
+	}
+
+	.footer {
+		display: flex;
+		justify-content: center;
+	}
+}
+@media only screen and (max-width: 575px) {
+	.footer-copy {
+		margin-bottom: 60px;
+	}
+}
+@media only screen and (max-width: 479px) {
+	.footer-news-title {
+		font-size: 20px;
+	}
+
+	.ec-footer {
+		.footer-top {
+			.ec-footer-widget {
+				.ec-footer-links {
+					.ec-footer-link {
+						a {
+							font-size: 14px;
+							line-height: 20px;
+						}
+
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+
+	.footer-bottom {
+		.ec-copy {
+			font-size: 13px;
+		}
+	}
+}

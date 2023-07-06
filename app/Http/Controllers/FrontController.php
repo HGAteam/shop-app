@@ -13,9 +13,8 @@ class FrontController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('price','ASC')->take(6)->get();
-        $title = trans('Buy courses online from anywhere');
-        return view('welcome',['products' => $products, 'title' => $title]);
+        $title = trans('Nombre de tienda');
+        return view('welcome',['title' => $title]);
     }
 
     public function products(){
