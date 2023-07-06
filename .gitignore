@@ -15,7 +15,9 @@ public/hot
 public_html/storage
 public_html/hot
 composer.lock
-package-lock.son
+/composer.lock
+package-lock.json
+/package-lock.json
 storage/*.key
 .env
 Homestead.yaml
