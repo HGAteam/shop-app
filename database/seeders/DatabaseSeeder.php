@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::create([
             'name' => 'Admin',
             'last_name' => 'Admin',
-            'email' => 'franco@computersandmedias.com',
+            'email' => 'admin@hgateam.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
             'remember_token' => Str::random(10),
@@ -26,8 +26,8 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::create([
             'name' => 'Client',
-            'last_name' => 'User',
-            'email' => 'adrgabtu@gmail.com',
+            'last_name' => 'Client',
+            'email' => 'client@hgateam.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
             'remember_token' => Str::random(10),
@@ -37,9 +37,11 @@ class DatabaseSeeder extends Seeder
         \App\Models\Category::create([
             'name' => 'Online Courses',
             'slug' => 'online-courses',
+            'icon' => null,
+            'parent_id' => null,
             'description' => 'Online Courses'
-        ]);     
-        
+        ]);
+
         $this->call([
             ProductSeeder::class
         ]);

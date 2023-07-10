@@ -16,7 +16,7 @@
           } catch (\Throwable $th) {
               //throw $th;
           }
-          
+
       @endphp
       <nav class="navbar navbar-expand-lg bg-primary {{ request()->is('/','login', 'password/reset', 'register') ? 'fixed-top navbar-transparent' : '' }}"
           @if (request()->is('/')) color-on-scroll="30" @else @endif>
@@ -93,7 +93,6 @@
                       @endif
 
                       @guest
-
                           @if (Route::has('login'))
                               <li class="nav-item">
 
@@ -140,7 +139,7 @@
 
                                     {{ __('Documentation') }}
 
-                                </a>                                  
+                                </a>
 
                                   <a class="dropdown-item" target="_blank" href="{{ route('logout') }}"
                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -158,7 +157,6 @@
                               </div>
 
                           </li>
-
                       @endguest
 
                   </ul>

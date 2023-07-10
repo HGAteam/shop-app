@@ -14,12 +14,12 @@
     <meta name="msapplication-TileImage" content="{{asset('assets/images/favicon/favicon.png')}}" />
 
     <!-- begin::links -->
-    @include('layouts.partials._styles')
+    @include('layouts.themes.default.partials._styles')
     <!-- end::links -->
 
 </head>
 <body>
-    <!-- start::loader -->
+    <!-- begin::loader -->
     <div id="ec-overlay">
         <div class="ec-ellipsis">
             <div></div>
@@ -31,7 +31,7 @@
     <!-- end::loader -->
 
     <!-- start::navigation -->
-    @include('layouts.partials._navigation')
+    @include('layouts.themes.default.partials._navigation')
     <!-- end::navigation -->
 
     <!-- begin::content -->
@@ -39,11 +39,11 @@
     <!-- end::content -->
 
     <!-- begin::footer -->
-    @include('layouts.partials._footer')
+    @include('layouts.themes.default.partials._footer')
     <!-- end::footer -->
 
     <!-- begin::scrtips -->
-    @include('layouts.partials._scripts')
+    @include('layouts.themes.default.partials._scripts')
     <!-- end::scrtips -->
 </body>
 </html>

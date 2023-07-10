@@ -18,7 +18,7 @@
     - Common
     - Popup Model
     - Breadcrumb
-03. Layout 
+03. Layout
     - Header Section
     - Mainslider Section
     - Product Tab Section
@@ -48,7 +48,7 @@
     - Cart Page
     - Compare Page
     - Track Order Page
-    - Checkout Page    
+    - Checkout Page
     - Elements Tabs Page
     - Elements Categories Page
     - Elements Buttons Page
@@ -17130,7 +17130,7 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.ec-main-menu .ec-sidebar-toggle {
+.ec-main-menu .ec-modal-toggle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17138,17 +17138,25 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
       -ms-flex-align: center;
           align-items: center;
 }
-.ec-main-menu .ec-sidebar-toggle i {
+.ec-main-menu .ec-modal-toggle i {
   font-size: 24px;
   line-height: 18px;
+  margin-right: 5px;
 }
-.ec-main-menu .ec-sidebar-toggle .header_svg {
+
+.ec-main-menu .ec-modal-toggle small {
+  font-size: 14px;
+  line-height: 14px;
+  display:block;
+}
+
+.ec-main-menu .ec-modal-toggle .header_svg {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  width: 26px;
+  width: 52px;
   height: 26px;
 }
-.ec-main-menu .ec-sidebar-toggle .header_svg path {
+.ec-main-menu .ec-modal-toggle .header_svg path {
   fill: #444444;
 }
 .ec-main-menu ul {
@@ -18445,10 +18453,23 @@ button.btn-close.qty_close {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #ff6285;
   border-radius: 0 15px 15px 0;
-  font-weight: 700;
+    background-color: #02930d;
+    font-weight: 700;
 }
+
+/* .ec-product-inner .ec-pro-image .percentage .percentage-danger {
+  background-color: #d50000;
+}
+
+.ec-product-inner .ec-pro-image .percentage .percentage-warning {
+    background-color: #feb301;
+}
+
+.ec-product-inner .ec-pro-image .percentage .percentage-success {
+  background-color: #1cc00a;
+} */
+
 .ec-product-inner .ec-pro-image a.quickview {
   visibility: hidden;
   position: absolute;
@@ -30297,7 +30318,7 @@ input[type=email]:focus::-webkit-input-placeholder {
    vendor Page CSS
    	- Single Vendor
    	- Multi Vendor
-   	- Vendor Sidebar 
+   	- Vendor Sidebar
    	- Vendor Dashboard
    	- Vendor Upload
    	- Vendor Profile

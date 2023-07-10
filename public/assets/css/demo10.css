@@ -17904,6 +17904,79 @@ select {
 }
 
 /*-------------------------------------------------
+  Vendor Section CSS For Home page 1 (index.html)
+---------------------------------------------------*/
+.ec-vendor-card {
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #eeeeee;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  .ec-vendor-card .ec-vendor-detail {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .ec-vendor-card .ec-vendor-detail .ec-vendor-avtar {
+    width: 70px;
+    margin-right: 10px;
+  }
+  .ec-vendor-card .ec-vendor-detail .ec-vendor-info {
+    width: calc(100% - 80px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+  }
+  .ec-vendor-card .ec-vendor-detail .ec-vendor-info .name {
+    font-weight: 500;
+    color: #444444;
+  }
+  .ec-vendor-card .ec-vendor-detail .ec-vendor-info .prod-count {
+    margin-bottom: 10px;
+    color: #999;
+  }
+  .ec-vendor-card .ec-vendor-detail .ec-vendor-info .ec-pro-rating i {
+    font-size: 12px;
+  }
+  .ec-vendor-card .ec-vendor-detail .ec-vendor-info .ec-sale {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    bottom: -1px;
+    font-size: 12px;
+  }
+  .ec-vendor-card .ec-vendor-detail .ec-vendor-info .ec-sale p {
+    margin: 0;
+    color: #999;
+  }
+  .ec-vendor-card .ec-vendor-prod {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, calc(50% - 6px));
+    grid-row-gap: 12px;
+    grid-column-gap: 12px;
+  }
+  .ec-vendor-card .ec-vendor-prod .ec-prod-img {
+    overflow: hidden;
+  }
+  .ec-vendor-card .ec-vendor-prod .ec-prod-img img {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .ec-vendor-card .ec-vendor-prod .ec-prod-img img:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+/*-------------------------------------------------
     Banner Section
 ---------------------------------------------------*/
 /*-----  Main Banner  -----*/
