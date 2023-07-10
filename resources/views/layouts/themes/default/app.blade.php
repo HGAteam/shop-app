@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,15 +10,16 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- site Favicon -->
-    <link rel="icon" href="{{asset('assets/images/favicon/favicon.png')}}" sizes="32x32" />
-    <link rel="apple-touch-icon" href="{{asset('assets/images/favicon/favicon.png')}}" />
-    <meta name="msapplication-TileImage" content="{{asset('assets/images/favicon/favicon.png')}}" />
+    <link rel="icon" href="{{ asset('assets/images/favicon/favicon.png') }}" sizes="32x32" />
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/favicon/favicon.png') }}" />
+    <meta name="msapplication-TileImage" content="{{ asset('assets/images/favicon/favicon.png') }}" />
 
     <!-- begin::links -->
     @include('layouts.themes.default.partials._styles')
     <!-- end::links -->
 
 </head>
+
 <body>
     <!-- begin::loader -->
     <div id="ec-overlay">
@@ -38,6 +40,10 @@
     @yield('content')
     <!-- end::content -->
 
+    <!-- begin::Components -->
+    @include('layouts.themes.default.components.cart.sidecart')
+    <!-- end::Components -->
+
     <!-- begin::footer -->
     @include('layouts.themes.default.partials._footer')
     <!-- end::footer -->
@@ -46,4 +52,5 @@
     @include('layouts.themes.default.partials._scripts')
     <!-- end::scrtips -->
 </body>
+
 </html>

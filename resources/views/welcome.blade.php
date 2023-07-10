@@ -489,16 +489,6 @@
                                 <div class="ec-vendor-info">
                                     <a href="#" class="name">Marvelus</a>
                                     <p class="prod-count">154 Products</p>
-                                    <div class="ec-pro-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star"></i>
-                                    </div>
-                                    <div class="ec-sale">
-                                        <p title="Weekly sales">Sales 954</p>
-                                    </div>
                                 </div>
                             </div>
                             <div class="ec-vendor-prod">
@@ -534,16 +524,6 @@
                                 <div class="ec-vendor-info">
                                     <a href="#" class="name">Marvelus</a>
                                     <p class="prod-count">154 Products</p>
-                                    <div class="ec-pro-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star"></i>
-                                    </div>
-                                    <div class="ec-sale">
-                                        <p title="Weekly sales">Sales 954</p>
-                                    </div>
                                 </div>
                             </div>
                             <div class="ec-vendor-prod">
@@ -579,16 +559,6 @@
                                 <div class="ec-vendor-info">
                                     <a href="#" class="name">Marvelus</a>
                                     <p class="prod-count">154 Products</p>
-                                    <div class="ec-pro-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star"></i>
-                                    </div>
-                                    <div class="ec-sale">
-                                        <p title="Weekly sales">Sales 954</p>
-                                    </div>
                                 </div>
                             </div>
                             <div class="ec-vendor-prod">
@@ -624,16 +594,6 @@
                                 <div class="ec-vendor-info">
                                     <a href="#" class="name">Marvelus</a>
                                     <p class="prod-count">154 Products</p>
-                                    <div class="ec-pro-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star"></i>
-                                    </div>
-                                    <div class="ec-sale">
-                                        <p title="Weekly sales">Sales 954</p>
-                                    </div>
                                 </div>
                             </div>
                             <div class="ec-vendor-prod">
@@ -720,8 +680,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -756,8 +716,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -796,8 +756,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -836,8 +796,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -876,8 +836,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -913,8 +873,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -952,8 +912,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -991,8 +951,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -1027,8 +987,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -1063,8 +1023,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -1103,8 +1063,8 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
                                                             data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
@@ -1143,12 +1103,11 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
-                                                            title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
+                                                        <a href="#" class="ec-btn-group compare" title="Compare"><i
+                                                                class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#ec_quickview_modal"><i
+                                                            data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><i
                                                                 class="fi-rr-eye"></i></a>
                                                         <a class="ec-btn-group wishlist" title="Wishlist"><i
                                                                 class="fi-rr-heart"></i></a>
@@ -1192,7 +1151,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1230,7 +1189,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1270,7 +1229,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1310,7 +1269,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1347,7 +1306,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1384,7 +1343,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1425,7 +1384,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1466,7 +1425,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1504,7 +1463,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1541,7 +1500,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1582,7 +1541,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1623,7 +1582,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1672,7 +1631,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1713,7 +1672,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1751,7 +1710,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1788,7 +1747,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1826,7 +1785,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1863,7 +1822,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1904,7 +1863,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1944,7 +1903,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -1984,7 +1943,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -2025,7 +1984,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -2066,7 +2025,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -2104,7 +2063,7 @@
                                                     <div class="ec-pro-actions">
                                                         <button title="Add To Cart" class=" add-to-cart"><i
                                                                 class="fi-rr-shopping-basket"></i></button>
-                                                        <a href="compare.html" class="ec-btn-group compare"
+                                                        <a href="#" class="ec-btn-group compare"
                                                             title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
                                                         <a href="#" class="ec-btn-group quickview"
                                                             data-link-action="quickview" title="Quick view"
@@ -2136,7 +2095,4 @@
         </div>
     </section>
     <!-- ec Product tab Area End -->
-    <!-- begin::Components -->
-    @include('layouts.themes.default.components.cart.sidecart')
-    <!-- end::Components -->
 @endsection

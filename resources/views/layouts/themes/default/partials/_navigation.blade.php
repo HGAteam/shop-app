@@ -173,11 +173,11 @@
                             <form class="ec-search-group-form" action="#">
                                 <div class="ec-search-select-inner">
                                     <select name="ec-search-cat">
-                                        <option selected disabled>{{ __('Todas') }}</option>
-                                        <option value="">Llamar a otras categorias</option>
+                                        <option selected disabled>{{__('Todas') }}</option>
+                                        <option value=""></option>
                                     </select>
                                 </div>
-                                <input class="form-control" placeholder="{{ __('Estoy buscando') }}..." type="text">
+                                <input class="form-control" placeholder="{{__('Estoy buscando') }}..." type="text">
                                 <button class="search_submit" type="submit">
                                     {{ __('Buscar') }}
                                     <i class="fi-rr-search"></i>
@@ -274,8 +274,8 @@
                         <form class="ec-search-group-form" action="#">
                             <div class="ec-search-select-inner">
                                 <select name="ec-search-cat">
-                                    <option selected disabled>{{ __('Todas') }}</option>
-                                    <option value="shoes">{{__('Categorias')}}</option>
+                                    <option selected disabled>{{__('Todas') }}</option>
+                                    <option value="shoes"></option>
                                 </select>
                             </div>
                             <input class="form-control" placeholder="{{ __('Estoy buscando') }}..." type="text">
@@ -351,7 +351,7 @@
                             <li><a href="javascript:void(0)">{{ __('Ofertas') }}</a></li>
                             <li><a href="javascript:void(0)">{{ __('Vendedores') }}</a></li>
                             <li><a href="javascript:void(0)">{{ __('Distribuidores') }}</a></li>
-                            <li><a href="javascript:void(0)">{{ __('Productores /Fabricantes') }}</a></li>
+                            <li><a href="javascript:void(0)">{{ __('Fabricantes / Productores') }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -373,7 +373,7 @@
                     <li><a href="javascript:void(0)">{{ __('Ofertas') }}</a></li>
                     <li><a href="javascript:void(0)">{{ __('Vendedores') }}</a></li>
                     <li><a href="javascript:void(0)">{{ __('Distribuidores') }}</a></li>
-                    <li><a href="javascript:void(0)">{{ __('Productores /Fabricantes') }}</a></li>
+                    <li><a href="javascript:void(0)">{{ __('Fabricantes / Productores') }}</a></li>
                 </ul>
             </div>
             <div class="header-res-lan-curr">

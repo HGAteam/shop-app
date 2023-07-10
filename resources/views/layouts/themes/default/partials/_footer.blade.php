@@ -6,8 +6,8 @@
              <div class="container">
                  <div class="row">
                      <div class="text-center footer-off-msg">
-                         <span>{{__('Comienzá a comprar y vender desde nuestro sitio')}}</span>
-                         <span class="footer-off-text">{{__('Es Gratis')}}</span>
+                         <span>{{__('Comenzá a comprar y vender desde nuestro sitio')}}</span>
+                         <span class="footer-off-text">{{__('ES GRATIS')}}</span>
                          <a href="#" target="_blank">{{__('Más información')}}</a>
                      </div>
                  </div>
