@@ -1,9 +1,10 @@
-# Shop App
+
+# **Shop App**
 ## Primer Proyecto de Productos en Linea
 
-* Elemento 1
-* Elemento 2
-  - Subelemento 2.1
-  - Subelemento 2.2
-1. Elemento numerado 1
-2. Elemento numerado 2
+* Proyecto de prueba para modificar libremente
+* Template Creative Tim free
+  - Se puede editar libremente y agregar modificaciones.
+  - Contiene sistema de carro virtual 
+  - dLocal Adaptado
+  - Estado de venta según respuestas de dLocal
